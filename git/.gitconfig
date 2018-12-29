@@ -1,0 +1,19 @@
+[user]
+        name = Markian Yskout 
+        email = markian.yskout@gmail.com
+[color]
+        ui = true
+[core]
+    ignorecase = true
+	editor = vim
+	autocrlf = input
+	autcrlf = input
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[push]
+	default = simple
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+
