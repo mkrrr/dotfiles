@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_DIR=$HOME/dotfiles
+DOTFILES_DIR=`pwd`
 
 mv $HOME/.bash_profile $HOME/.bash_profile.bk
 mv $HOME/.bashrc $HOME/.bashrc.bk
