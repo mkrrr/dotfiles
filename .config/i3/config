@@ -12,6 +12,7 @@
 # name workspaces
 set $wsterm    1:Term
 set $wsweb     2:Web
+set $wsnotion  3:Notion
 
 set $mod Mod4
 
@@ -102,7 +103,7 @@ bindsym $mod+a focus parent
 # switch to workspace
 bindsym $mod+1 workspace $wsterm
 bindsym $mod+2 workspace $wsweb
-bindsym $mod+3 workspace 3
+bindsym $mod+3 workspace $wsnotion 
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -114,7 +115,7 @@ bindsym $mod+0 workspace 10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $wsterm
 bindsym $mod+Shift+2 move container to workspace $wsweb 
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+3 move container to workspace $wsnotion
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -164,10 +165,12 @@ bar {
 
 
 
+assign [class="^Notion$"] → $wsnotion
 assign [class="^Firefox$"] → $wsweb
 assign [class="^Gnome-terminal$"] → $wsterm
 
 
 set $wsweb     2:Web
+set $wsnotion  3:Notion
 exec --no-startup-id i3-msg 'workspace $wsweb; exec /usr/bin/firefox'
-exec --no-startup-id /usr/local/bin/clipit                  # ClipIt
+exec --no-startup-id i3-msg 'workspace $wsnotion; exec /home/markian/notion/Notion-linux-x64/Notion'
